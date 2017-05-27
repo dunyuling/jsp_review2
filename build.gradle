@@ -1,0 +1,32 @@
+group 'me.lhg'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    compile files (
+            'src/main/webapp/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar',
+            'src/main/webapp/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar',
+            'src/main/webapp/WEB-INF/lib/jsp-api.jar',
+            'src/main/webapp/WEB-INF/lib/servlet-api.jar',
+            'src/main/webapp/WEB-INF/lib/websocket-api.jar',
+            'src/main/webapp/WEB-INF/lib/catalina.jar'
+    )
+    /*compile 'org.apache.taglibs:taglibs-standard-impl:1.2.5'
+    compile 'org.apache.taglibs:taglibs-standard-spec:1.2.5'
+    compile 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.1'
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile 'org.apache.tomcat:tomcat-catalina:8.5.15'
+    compile 'javax.websocket:javax.websocket-api:1.1'*/
+    compile 'org.apache.tomcat:juli:6.0.53'
+}
